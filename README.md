@@ -2,8 +2,8 @@
 
 my-terra-dapp have the following sub systemsm,you need fork and download to you own dev enviroment
 
-. [./contracts/realestate]https://github.com/teiwei2003/realestate
+. [https://github.com/teiwei2003/realestate](./contracts/realestate)
 
-. [./terra_assets]https://github.com/teiwei2003/assets
+. [https://github.com/teiwei2003/assets](./terra_assets)
 
-. [./terraswap-graph]https://github.com/teiwei2003/terraswap-graph
+. [https://github.com/teiwei2003/terraswap-graph](./terraswap-graph)
