@@ -21,7 +21,7 @@ import { launch } from 'puppeteer';
   });
 
   const [page] = await browser.pages();
-  await page.goto(`http://localhost:${port}`);
+  await page.goto(`https://localhost:${port}`);
 
   //await page.waitForFunction(
   //  `document.querySelector('#app h1').innerHTML === 'Hello World!'`,
