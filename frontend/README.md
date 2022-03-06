@@ -3,8 +3,8 @@
 Initialize this project
 
 ```sh
-git clone https://github.com/Anchor-Protocol/anchor-web-app.git
-cd anchor-web-app
+git clone https://github.com/teiwei2003/my-terra-dapp.git
+cd my-terra-dapp/frontend
 yarn install
 ```
 
@@ -54,4 +54,4 @@ IDE
 
 This software is licensed under the Apache 2.0 license. Read more about it [here](LICENSE).
 
-© 2021 Anchor Protocol
+© 2022  Teiwei Protocol
