@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Scripts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Initialize this project
 
-## Available Scripts
+```sh
+git clone https://github.com/Anchor-Protocol/anchor-web-app.git
+cd anchor-web-app
+yarn install
+```
 
-In the project directory, you can run:
+And you can run scripts
 
-### `npm start`
+- `yarn run app:start` Development run `/app` directory (web browser will open)
+- `yarn run app:build` Build `/app` directory (`/app/build` directory will created)
+- `yarn run app:test`
+- `yarn run app:coverage`
+- `yarn run app:pack` Build `/app/src/@anchor-protocol` packages (`/app/out` directory will created)
+- `yarn run app:publish` Publish `/packages/out` directory to the NPM registry
+- `yarn run app:storybook` Development run Storybook
+- `yarn run app:build-storybook`
+- `yarn run landing:start` Development run `/landing` directory (web browser will open)
+- `yarn run landing:build` Build `/landing` directory (`/landing/build` directory will created)
+- `yarn run landing:test`
+- `yarn run landing:coverage`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Environments
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Local SSL
 
-### `npm test`
+The system environment variable `LOCALHOST_HTTPS_CERT` and `LOCALHOST_HTTPS_KEY` are required when you run `yarn run app:start` or `yarn run landing:start` in local.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(WebApp requires https certified by CA to test features such as connectivity and Notification with Walletconnect's wss.)
 
-### `npm run build`
+1. First, you should refer to <https://github.com/FiloSottile/mkcert> to create a root CA on your Local System.
+2. Later, create SSL Cert and Key files using commands such as `mkcert localhost 127.0.0.1`.
+3. Enter the SSL Cert and Key file addresses in the `LOCALHOST_HTTPS_CERT` and `LOCALHOST_HTTPS_KEY` system environment variables.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## GraphQL
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Configurations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- See [.graphqlconfig](.graphqlconfig) file
+  - This configuration is the graphql-config v2 spec (IntelliJ only supports that legacy spec)
+  - See <https://github.com/kamilkisiela/graphql-config/tree/legacy>
+- See [schema.graphql](schema.graphql) file
+  - When the schema file is updated. run `yarn run graphql:download-schema`
 
-### `npm run eject`
+IDE
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- JetBrains <https://plugins.jetbrains.com/plugin/8097-js-graphql>
+- VSCode <https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This software is licensed under the Apache 2.0 license. Read more about it [here](LICENSE).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2021 Anchor Protocol
